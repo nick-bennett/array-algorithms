@@ -1,7 +1,6 @@
 package edu.cnm.deepdive;
 
 import java.security.SecureRandom;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Shuffler {
