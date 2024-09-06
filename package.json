@@ -1,12 +1,13 @@
 {
   "name": "array-algorithms",
-  "version": "0.0.0",
   "type": "module",
   "dependencies": {
     "debug": "4.3.5"
   },
   "devDependencies": {
     "prettier": "3.3.3",
-    "vitest": "^2.0.5"
+    "vitest": "latest",
+    "@vitest/ui": "latest",
+    "vite": "latest"
   }
 }

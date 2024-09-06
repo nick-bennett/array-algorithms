@@ -1,19 +1,32 @@
+// noinspection SpellCheckingInspection
+
 import {expect, test} from "vitest";
 import {shuffle} from "../src/shuffle.js";
 
-const dataSize = 100;
-
-// noinspection SpellCheckingInspection
-const unshuffledData = Array.from(
-    {length: dataSize},
+const smallDataSize = 100;
+const unshuffledSmallData = Array.from(
+    {length: smallDataSize},
     (_, index) => index + 1
 );
+const smallDataToShuffle = [...unshuffledSmallData];
+const smallExpectedSet = new Set(unshuffledSmallData);
 
-const dataToShuffle = [...unshuffledData];
-const expectedSet = new Set(unshuffledData);
+const largeDataSize = 1_000_000;
+const unshuffledLargeData = Array.from(
+    {length: largeDataSize},
+    (_, index) => index + 1
+);
+const largeDataToShuffle = [...unshuffledLargeData];
+const largeExpectedSet = new Set(unshuffledLargeData);
 
-test("Shuffle: check for correct contents", () => {
-  shuffle(dataToShuffle);
-  console.log(dataToShuffle);
-  expect(new Set(dataToShuffle)).toStrictEqual(expectedSet);
+test("Shuffle: check for correct contents of small array", () => {
+  shuffle(smallDataToShuffle);
+  console.log(smallDataToShuffle);
+  expect(new Set(smallDataToShuffle)).toStrictEqual(smallExpectedSet);
+});
+
+test("Shuffle: check for correct contents of large array", () => {
+  shuffle(largeDataToShuffle);
+  console.log(largeDataToShuffle);
+  expect(new Set(largeDataToShuffle)).toStrictEqual(largeExpectedSet);
 });
