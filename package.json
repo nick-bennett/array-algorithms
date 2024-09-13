@@ -9,10 +9,14 @@
     "test:ui": "vitest --ui",
     "test:run": "vitest run"
   },
+  "dependencies": {
+    "debug": "latest"
+  },
   "devDependencies": {
-    "prettier": "latest",
+    "@types/node": "^22.5.4",
     "@vitest/ui": "latest",
     "vite": "latest",
-    "vitest": "latest"
+    "vitest": "latest",
+    "prettier": "latest"
   }
 }

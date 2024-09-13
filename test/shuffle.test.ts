@@ -21,12 +21,10 @@ const largeExpectedSet = new Set(unshuffledLargeData);
 
 test("Shuffle: check for correct contents of small array", () => {
   shuffle(smallDataToShuffle);
-  console.log(smallDataToShuffle);
   expect(new Set(smallDataToShuffle)).toStrictEqual(smallExpectedSet);
 });
 
 test("Shuffle: check for correct contents of large array", () => {
   shuffle(largeDataToShuffle);
-  console.log(largeDataToShuffle);
   expect(new Set(largeDataToShuffle)).toStrictEqual(largeExpectedSet);
 });
